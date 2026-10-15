@@ -1,0 +1,12 @@
+{
+  "repo": "HeyPuter/everything",
+  "url": "https://github.com/HeyPuter/everything.git",
+  "subpath": "src/photo-studio",
+  "ref": "main",
+  "commit": "3d9d7244f6a55fbaabfd04b73d417fffb12ef3a8",
+  "commitDate": "2026-10-14T16:30:21-07:00",
+  "fetchedAt": "2026-10-15T00:23:01.498Z",
+  "fileCount": 1224,
+  "treeHash": "8c418fdf590e35ed44a121c0016ae1875a34be6095b49ad9b1d588e83f3c0204",
+  "note": "upstream/ 是此提交下 src/photo-studio 的原样快照，不要就地修改；移植改动放 shell/。"
+}
