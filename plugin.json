@@ -25,5 +25,5 @@
   "screenshots": [],
   "summary": "Photo Studio（HeyPuter/everything 的图层式图像编辑器）的 OTools 插件版：图层、蒙版、选区、滤镜、调色与批处理。工程与素材是本机目录里的普通文件，不走任何云账号。",
   "uuid": "otools-puter-ps",
-  "version": "0.1.3"
+  "version": "0.1.4"
 }
