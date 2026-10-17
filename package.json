@@ -1,6 +1,6 @@
 {
   "name": "otools-puter-ps",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "type": "module",
   "description": "Photo Studio (HeyPuter/everything) as an OTools plugin: the same editor, with documents stored as plain files on this computer instead of in a Puter cloud account.",

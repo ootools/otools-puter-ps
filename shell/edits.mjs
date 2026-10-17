@@ -8,9 +8,11 @@
  * 超过 5 行、或者涉及结构性改动，就别放这里——走 shell/overlay/ 整文件替换
  * （本项目的 `src/persistence/puter.ts` 就是这么换掉的）。
  *
- * 这批改动的主题只有一个：**摘掉需要 Puter 登录的入口**。
- * 登录、云端素材库、实时协作、云端脚本都要 Puter 账号；插件版一律让它们
- * 消失或停用，文件一律走本机（见 shell/src/otools/local.js）。
+ * 这批改动主要摘掉需要 Puter 登录的入口：登录、云端素材库、实时协作、云端脚本
+ * 都要 Puter 账号；插件版一律让它们消失或停用，文件一律走本机
+ * （见 shell/src/otools/local.js）。另有一类「路径适配」改动：插件页面由宿主用
+ * file:// 加载（entry 是相对路径 dist/index.html），上游写死的绝对路径资源
+ * 会被解析到磁盘根而 404，必须改成相对路径。
  */
 export const edits = [
   {
@@ -61,5 +63,12 @@ export const edits = [
     replace: `cmd({ id: 'file.scripts-browse-cloud', hidden: true,`,
     expect: 1,
     why: '「Browse Puter…」脚本命令：走云端脚本库，隐藏；本机那份 Browse… 保留。',
+  },
+  {
+    file: 'src/app/shell.ts',
+    find: `src="/app-icon.png"`,
+    replace: `src="./app-icon.png"`,
+    expect: 1,
+    why: '插件页面走 file:// 加载，`/app-icon.png` 会解析到磁盘根（file:///app-icon.png）而 404，空白页与「关于」里的应用图标就成破图；改成相对 dist/ 的路径。',
   },
 ];
